@@ -104,7 +104,7 @@ export default function Game() {
         });    
     }, [])
 
-    const ruledOut = (obj: Object) => {
+    const ruledOut = (obj: any) => {
         for (let pattern of winningPatterns) {
             const [a, b, c] = pattern;
             if (obj[a] !== "" && obj[a] === obj[b] && obj[b] === obj[c]) {
@@ -114,7 +114,7 @@ export default function Game() {
         return false;
     }
 
-    const draw = (obj: Object) => {
+    const draw = (obj: any) => {
         for (let oneBox of allBoxes) {
             if (obj[oneBox] == "") {
               return false;
