@@ -17,6 +17,8 @@ const defaultBoxes = {"chance": "player1", "eighth": "", "fifth": "", "first": "
 
 const allBoxes = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth"];
 
+interface BoxObject { [key: string]: string };
+
 const winningPatterns = [
     ["first", "second", "third"],
     ["fourth", "fifth", "sixth"],
@@ -39,7 +41,7 @@ export default function Game() {
     const random = () => Math.random().toString().slice(2, 8);
 
     const toastIds = { gameStart: random(), p1Join: random(), p2Join: random(), gameReset: random(), gameFinished: random() };
-    const [boxes, setBoxes] = useState(defaultBoxes);
+    const [boxes, setBoxes] = useState<BoxObject>(defaultBoxes);
     const [gameStart, setGameStart] = useState(false);
     const [gameFinished, setGameFinished] = useState(false);
     const [dialogOpen, setDialogOpen] = useState(false);
@@ -150,7 +152,7 @@ export default function Game() {
         }
     });
 
-    const buttonClick = (number: String) => {
+    const buttonClick = (number: string) => {
         if(boxes[number] == "" && uType !== "watcher" && boxes.chance == uType) {
             let tempBoxes = boxes;
             if(uType == "player1") {
