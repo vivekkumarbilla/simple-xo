@@ -218,7 +218,7 @@ export default function Game() {
                         {boxes.winner == "draw" ? <DialogDescription>It's a Draw!</DialogDescription> : <DialogDescription> The Game has finished. <p>{boxes.winner} has won the Game!</p></DialogDescription>}
                     </DialogContent>
                 </Dialog>
-                <Dialog open={name == null || name == ""} onOpenChange={() => console.log(false)}>
+                <Dialog open={userId == null || userId == ""} onOpenChange={() => console.log(false)}>
                     <DialogContent>
                         <DialogTitle className="flex items-center">Set Details</DialogTitle>
                         <Label htmlFor="name" className="mt-3">Name</Label>
