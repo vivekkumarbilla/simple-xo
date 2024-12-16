@@ -1,0 +1,28 @@
+.game {
+    .box-wrap {
+        background-color: khaki;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        button {
+            height: 100px;
+            width: 100px;
+            background-color: blanchedalmond;
+            border: 1px solid bisque;
+            span {
+                font-size: 60px;
+                font-weight: 700;
+            }
+            span.X {
+                color: gray;
+            }
+            span.O {
+                color: darkslategrey;
+                color: lightcoral;
+            }
+        }
+        button:has(span.X, span.O) {
+            background-color: #f3d5ae;
+        }
+    }
+}
